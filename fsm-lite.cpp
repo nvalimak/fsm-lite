@@ -157,7 +157,7 @@ int main(int argc, char ** argv)
             if (wn!=root)
                 cerr << "[" << cst.rb(wn)-cst.lb(wn) << " vs " << ep-sp << "]";
             cerr << ", seq = " << s << endl;
-        }*/
+            }*/
         if (wn == root)
         {
             cerr << "warning: no Weiner-link at " << depth << "-[" << sp << "," << ep << "]" << endl;
@@ -196,7 +196,7 @@ int main(int argc, char ** argv)
         cout << s;
         for (size_type i = 0; i < support; ++i)
             if (config.minfreq <= rank_ep[i]-rank_sp[i])
-                cout << ' ' << labels[i] << ':' << rank_ep[i]-rank_sp[i];
+                cout << ' ' << ir->id(labels[i]) << ':' << rank_ep[i]-rank_sp[i];
         cout << '\n';
     }
     

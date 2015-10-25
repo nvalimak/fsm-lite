@@ -46,6 +46,46 @@ void error_reading_input(configuration const &config, char const *message)
 /**
  * Simple FASTA input
  */
+void normalize(std::string &t)
+{
+    for (std::string::iterator it = t.begin(); it != t.end(); ++it)
+    {
+        switch (*it)
+        {
+        case('a'):
+            *it = 'A';
+            break;
+        case('c'):
+            *it = 'C';
+            break;
+        case('g'):
+            *it = 'G';
+            break;
+        case('t'):
+            *it = 'T';
+            break;
+        case('n'):
+            *it = 'N';
+            break;
+        case('A'):
+        case('C'):
+        case('G'):
+        case('T'):
+        case('N'):
+            break;
+        case('0'):
+        case('1'):
+        case('2'):
+        case('3'):
+        case('.'):
+            break;
+        default:
+            *it = 'N';
+            break;
+        }
+    }
+}
+
 void revcmpl(std::string &t)
 {
     char c;
@@ -113,6 +153,7 @@ size_t append(ofstream &ofs, string const &fname, unsigned &nseqs)
             row.pop_back();
         if (row[row.size()-1] == '\r')
             row.pop_back();
+        normalize(row);
         ofs << row;
         buffer += row;
         n += row.size();

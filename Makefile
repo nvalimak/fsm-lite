@@ -9,6 +9,9 @@ OBJ = configuration.o input_reader.o
 fsm-lite: fsm-lite.o $(OBJ)
 	$(CC) $(CPPFLAGS) -L${SDSL_INSTALL_PREFIX}/lib -o fsm-lite fsm-lite.o $(OBJ) $(LIBS)
 
+test: fsm-lite
+	./fsm-lite -l test.list -t tmp -v --debug -m 1
+
 clean:
 	rm -f fsm-lite *.o *~
 
