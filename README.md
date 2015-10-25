@@ -27,6 +27,6 @@ where `tmp` is a prefix filename for storing temporary index files.
 
 TODO
 ---
-1. Optimize the time and space.
+1. Optimize the time and space usage.
 2. Multi-threading.
 3. Support for gzip compressed input.
