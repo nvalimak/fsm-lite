@@ -15,9 +15,9 @@ For command-line options, see `./fsm-lite --help`.
 Usage example
 ---
 
-Input files are given as a list of `<data-identifier>` `<data-filename>` pairs. The `<data-identifier>`'s are assumed to be unique. Here's an example how to construct such a list out of all `*.fasta` files in the current directory:
+Input files are given as a list of `<data-identifier>` `<data-filename>` pairs. The `<data-identifier>`'s are assumed to be unique. Here's an example how to construct such a list out of all `/input/dir/*.fasta` files:
 
-  `ls *.fasta | awk '{split($1,a,"."); print a[1],$1}' > input.list` 
+  `for f in /input/dir/*.fasta; do id=$(basename "$f" .fasta); echo $id $f; done > input.list` 
 
 The files can then be processed by 
 
@@ -27,6 +27,6 @@ where `tmp` is a prefix filename for storing temporary index files.
 
 TODO
 ---
-1. Optimize the time and space.
+1. Optimize the time and space usage.
 2. Multi-threading.
 3. Support for gzip compressed input.
