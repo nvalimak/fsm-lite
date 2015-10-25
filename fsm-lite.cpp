@@ -158,12 +158,12 @@ int main(int argc, char ** argv)
                 cerr << "[" << cst.rb(wn)-cst.lb(wn) << " vs " << ep-sp << "]";
             cerr << ", seq = " << s << endl;
             }*/
-        if (wn == root)
+        if (wn == root && config.debug)
         {
             cerr << "warning: no Weiner-link at " << depth << "-[" << sp << "," << ep << "]" << endl;
             continue;
         }
-        if (cst.rb(wn)-cst.lb(wn) == ep-sp)
+        if (depth < config.maxlength && cst.rb(wn)-cst.lb(wn) == ep-sp)
             continue; // not left-branching
 
         sdsl::interval_symbols(label_wt, sp, ep+1, support, labels, rank_sp, rank_ep);
