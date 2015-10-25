@@ -8,7 +8,7 @@ library (tested using the release `sdsl-lite-2.0.3`).
 0. Download and install https://github.com/simongog/sdsl-lite/archive/v2.0.3.tar.gz
 1. modify the correct SDSL path into the `Makefile`,
 2. turn on preferred compiler optimizations, and
-3. run `make`.
+3. run `make depend && make`.
 
 For command-line options, see `./fsm-lite --help`.
 
