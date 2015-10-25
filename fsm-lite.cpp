@@ -88,7 +88,9 @@ int main(int argc, char ** argv)
     configuration config(argc, argv);
     if (!config.good)
         config.print_short_usage();
-     
+
+    if (config.verbose)
+        cerr << "Reading input files..." << endl;
     input_reader *ir = input_reader::build(config);
     if (config.verbose)
         cerr << "Read " << ir->size() << " input files and " << ir->total_seqs() << " sequences of total length " << ir->total_size() << endl;
