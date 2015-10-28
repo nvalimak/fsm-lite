@@ -5,10 +5,11 @@ A singe-core implemetation of frequency-based substring mining. This
 implementation requires the https://github.com/simongog/sdsl-lite
 library (tested using the release `sdsl-lite-2.0.3`).
 
-1. Download and install https://github.com/simongog/sdsl-lite/archive/v2.0.3.tar.gz
-2. modify the correct SDSL path into the `Makefile`,
-3. turn on preferred compiler optimizations, and
-4. run `make depend && make`.
+1. Download and extract https://github.com/simongog/sdsl-lite/archive/v2.0.3.tar.gz
+2. install SDSL by running `./install.sh /install/path/sdsl-lite-2.0.3`, where `/install/path` need to be specified,
+3. update the correct SDSL installation path into the `fsm-lite/Makefile`,
+4. turn on preferred compiler optimization in `fsm-lite/Makefile`, and
+5. run `make depend && make` under the directory `fsm-lite`.
 
 For command-line options, see `./fsm-lite --help`.
 

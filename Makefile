@@ -2,7 +2,7 @@ SDSL_INSTALL_PREFIX=/Users/nvalimak/code/sdsl-lite-2.0.3
 
 CC=g++
 CPPFLAGS=-std=c++11 -I${SDSL_INSTALL_PREFIX}/include 
-DISBALEDOPTIMIZATIONFLAGS = -DNDEBUG -O3 [-msse4.2]
+DISBALEDOPTIMIZATIONFLAGS = -DNDEBUG -O3 -msse4.2
 LIBS=-lsdsl -ldivsufsort -ldivsufsort64
 OBJ = configuration.o input_reader.o 
 
