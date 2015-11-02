@@ -193,7 +193,7 @@ int main(int argc, char ** argv)
         auto s = extract(cst.csa, pos, pos + depth - 1);
         if (input_reader::smaller_than_rev_cmpl(s))
             continue;
-        cout << s;
+        cout << s + " |";
         for (size_type i = 0; i < support; ++i)
             if (config.minfreq <= rank_ep[i]-rank_sp[i])
                 cout << ' ' << ir->id(labels[i]) << ':' << rank_ep[i]-rank_sp[i];
